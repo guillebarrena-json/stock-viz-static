@@ -1,0 +1,26 @@
+name: Update stock data JSON
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Diariamente a medianoche UTC
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: |
+          pip install yfinance
+      - name: Fetch stock data
+        run: |
+          python scripts/fetch_stock.py
+      - name: Commit JSON
+        run: |
+          git config user.name 'github-actions'
+          git config user.email 'actions@github.com'
+          git add data/*.json
+          git commit -m 'Auto-update stock data'
+          git push
