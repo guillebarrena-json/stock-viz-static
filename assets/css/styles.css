@@ -1,0 +1,5 @@
+body { font-family: sans-serif; background: #fafafa; margin: 0; padding: 2rem; }
+.container { max-width: 900px; margin: auto; background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+h1 { text-align: center; }
+.controls { display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 1rem; }
+#chart { height: 500px; }
