@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Viz Estático</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Stock Viz</h1>
+    <div class="controls">
+      <select id="ticker-select"></select>
+      <input type="date" id="start-date">
+      <input type="date" id="end-date">
+      <button id="load-btn">Cargar</button>
+    </div>
+    <div id="chart"></div>
+  </div>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
